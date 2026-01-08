@@ -21,7 +21,7 @@ function App({ data }) {
     if (image) formData.append('image', image);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/analyze-ivr-log`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
         method: 'POST',
         body: formData,
       });
