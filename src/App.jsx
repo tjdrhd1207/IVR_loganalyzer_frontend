@@ -14,16 +14,33 @@ function App({ data }) {
     e.preventDefault();
     setLoading(true);
 
-    // 이미지와 텍스트를 함께 보낼 때는 FormData를 사용합니다.
-    const formData = new FormData();
-    formData.append('channel', channel);
-    formData.append('logText', logText);
-    if (image) formData.append('image', image);
+    let base64string = "";
+    if (image) {
+      const reader = new FileReader();
+      base64string = await new Promise((res) => {
+        reader.onload = () => resolveConfig(reader.result);
+        reader.readAsDataURL(image);
+      });
+    }
 
+    const payload = {
+      mailContent: "사용자 입력 메일 내용 또는 기본값",
+      logText: logText,
+      logImageBase64: base64string // 'data:image/png;base64,...' 형태
+    };
+
+    // 이미지와 텍스트를 함께 보낼 때는 FormData를 사용합니다.
+    /* const formData = new FormData();
+    formData.append('channel', channel);
+    formData.append('logText', logText); */
+    
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}`, {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: payload,
       });
       const data = await response.json();
       setResult(data);  
