@@ -42,7 +42,7 @@ function App({ data }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: payload,
+        body: JSON.stringify(payload),
       });
       const data = await response.json();
       setResult(data);  
