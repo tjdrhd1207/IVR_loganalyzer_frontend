@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -35,7 +36,7 @@ function App({ data }) {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-10">
-      {{/* 입력 세션 */}}
+      {/* 입력 세션 */}
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-8">
         <h1 className="text-xl font-bold mb-6 text-gray-800">IVR 로그 분석 요청</h1>
         <form onSubmit={handleAnalyze} className="space-y-4">

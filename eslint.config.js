@@ -24,6 +24,8 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-undef': 'error', // 정의되지 않은 변수 사용 시 빨간 줄(에러) 표시!
+      'react/prop-types': 'off', // 필요에 따라 설정
     },
   },
 ])
