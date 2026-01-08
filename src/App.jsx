@@ -28,7 +28,7 @@ function App({ data }) {
     const payload = {
       mailContent: "사용자 입력 메일 내용 또는 기본값",
       logText: logText,
-      logImageBase64: base64string // 'data:image/png;base64,...' 형태
+      logImageBase64: base64String // 'data:image/png;base64,...' 형태
     };
 
     // 이미지와 텍스트를 함께 보낼 때는 FormData를 사용합니다.
