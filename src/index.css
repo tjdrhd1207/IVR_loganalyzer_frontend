@@ -71,3 +71,18 @@ button:focus-visible {
 .prose {
   white-space: pre-wrap; /* 연속된 공백과 줄바꿈을 그대로 유지 */
 }
+
+.min-h-screen {
+  /* 모바일 브라우저 주소창 포함 높이 대응 */
+  min-height: 100vh;
+  min-height: -webkit-fill-available; 
+  
+  /* 하단이 잘리지 않도록 안전 영역 확보 */
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+}
+
+/* 코드 블록이 모바일에서 너무 길어질 때 스크롤 허용 */
+pre {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}

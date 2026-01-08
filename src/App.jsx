@@ -54,7 +54,7 @@ function App({ data }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-10">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-10 pb-24"> {/* pb-24로 하단 여백 대폭 추가 */}
       {/* 입력 세션 */}
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-8">
         <h1 className="text-xl font-bold mb-6 text-gray-800">IVR 로그 분석 요청</h1>
